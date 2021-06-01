@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.5541673637796486 -0.6183165834845233 -0.5572998613937931 2.0499627817408905
-  position -0.6632645275867753 4.044007841569519 0.02342702627058032
+  orientation -0.1346727688188315 -0.9816080381485794 -0.1353104015985718 2.0668150679451793
+  position -0.9201984962844242 0.35144424813779646 -0.23811880897371443
 }
 TexturedBackground {
 }
@@ -47,4 +47,53 @@ Solid {
     }
   ]
   name "pista.obj"
+}
+Robot {
+  translation -0.12423091527582171 0.004874402647803854 0.17123207268737226
+  rotation 0.00031318875212443646 0.9999995329335888 0.000914355188136869 0.6182237733354169
+  children [
+    DEF RodaFL HingeJoint {
+      jointParameters HingeJointParameters {
+        position 29.979559405182197
+      }
+      device [
+        RotationalMotor {
+          name "RodaFL"
+        }
+      ]
+      endPoint Solid {
+        translation -0.11001599999999999 0.04044910916044818 -0.06899516591159881
+        rotation 0.4450261558961042 -0.44443368625671076 -0.7774512326111575 4.4625963468073735
+        children [
+          DEF Roda Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.02
+            }
+          }
+        ]
+        boundingObject USE Roda
+        physics DEF Physics_roda Physics {
+        }
+        linearVelocity 0.022824509341087602 0.0702538176363144 0.0320839477921422
+        angularVelocity 0.8132296624052351 0.0014481218769055943 -0.5814840126809663
+      }
+    }
+    DEF Base Shape {
+      appearance PBRAppearance {
+        baseColor 0.7 0.7 1
+      }
+      geometry Box {
+        size 0.1 0.01 0.25
+      }
+    }
+  ]
+  boundingObject USE Base
+  physics Physics {
+  }
+  controller "my_controller"
+  linearVelocity 1.1051424891005991e-05 0.00017657442326260333 -9.515143487469552e-06
+  angularVelocity -0.0019026596414982045 1.3617404692171474e-08 -0.0022105324663366155
 }
