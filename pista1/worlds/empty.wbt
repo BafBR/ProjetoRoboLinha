@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.2177480263224773 -0.915023938016462 -0.33958355362047693 1.7602568149630262
-  position -0.9675205656385498 0.5667417310091508 0.6319870671393699
+  orientation -0.4420992196154644 -0.8563952543792374 -0.26671229497741383 1.3668906677771175
+  position 0.1609013640127869 0.1813838183948244 0.36251349064976873
 }
 TexturedBackground {
 }
@@ -50,11 +50,11 @@ Solid {
   name "pista.obj"
 }
 Robot {
-  translation -0.208406 0.0398711 0.80106
-  rotation -2.382089999982691e-06 -0.9999999999927336 2.9763699999783723e-06 1.83233
+  translation 0.538771 0.0291505 0.285825
+  rotation -0.006720822677686613 0.9999534801506637 0.006918675965192196 -1.4959063209395158
   children [
     DEF IR_R DistanceSensor {
-      translation -0.006 0 0.13
+      translation -0.003 0 0.13
       rotation 0 0 -1 1.57
       children [
         Shape {
@@ -70,7 +70,7 @@ Robot {
       name "IR_R"
     }
     DEF IR_L DistanceSensor {
-      translation 0.006 0 0.13
+      translation 0.003 0 0.13
       rotation 0 0 -1 1.57
       children [
         Shape {
@@ -87,8 +87,9 @@ Robot {
     }
     DEF RodaFL HingeJoint {
       jointParameters HingeJointParameters {
-        position 880.4620943593769
-        anchor 0.04 0 0.07
+        position 110.07018420881366
+        anchor 0.04 0 0.04
+        dampingConstant 5
       }
       device [
         RotationalMotor {
@@ -98,8 +99,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.05 0 0.07
-        rotation 0.36911409039202986 -0.3688202719237103 0.8530688104087412 1.7282602859088692
+        translation 0.05 0 0.04
+        rotation -0.7076397461416143 0.7061564386452504 0.024270843423510192 3.0922912306710724
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -108,10 +109,11 @@ Robot {
             }
             geometry Cylinder {
               height 0.02
-              radius 0.04
+              radius 0.03
             }
           }
         ]
+        contactMaterial "RodaMaterial"
         boundingObject USE Roda
         physics DEF Physics_rpda Physics {
         }
@@ -119,8 +121,9 @@ Robot {
     }
     DEF RodaFR HingeJoint {
       jointParameters HingeJointParameters {
-        position 3441.3198302733163
-        anchor 0.04 0 0.07
+        position 2313.572262696647
+        anchor -0.04 0 0.04
+        dampingConstant 5
       }
       device [
         RotationalMotor {
@@ -130,8 +133,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.049999999999999746 0 0.07
-        rotation -0.6265778758205627 0.6260791136314477 0.4641391052331749 2.2718851079682287
+        translation -0.05 0 0.04
+        rotation -0.5435178424896522 0.5433937215905369 -0.6397746620735928 4.282347133380769
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -140,11 +143,12 @@ Robot {
             }
             geometry Cylinder {
               height 0.02
-              radius 0.04
+              radius 0.03
             }
           }
         ]
         name "solid(1)"
+        contactMaterial "RodaMaterial"
         boundingObject USE Roda
         physics DEF Physics_rpda Physics {
         }
@@ -152,8 +156,9 @@ Robot {
     }
     DEF RodaBL HingeJoint {
       jointParameters HingeJointParameters {
-        position 880.462091699265
-        anchor 0.04 0 -0.07
+        position 120.38387391346065
+        anchor 0.04 0 -0.05
+        dampingConstant 5
       }
       device [
         RotationalMotor {
@@ -163,8 +168,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.05000000000000002 0 -0.07
-        rotation 0.36911310958040594 -0.3688192918928209 0.8530696585060105 1.7282593040368652
+        translation 0.05 0 -0.05
+        rotation -0.4336676949850482 0.4333224912087164 -0.7900404729752947 4.479644413268633
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -173,11 +178,12 @@ Robot {
             }
             geometry Cylinder {
               height 0.02
-              radius 0.04
+              radius 0.03
             }
           }
         ]
         name "solid(2)"
+        contactMaterial "RodaMaterial"
         boundingObject USE Roda
         physics DEF Physics_rpda Physics {
         }
@@ -185,8 +191,9 @@ Robot {
     }
     DEF RodaBR HingeJoint {
       jointParameters HingeJointParameters {
-        position 3441.3198276017906
-        anchor 0.04 0 -0.07
+        position -30.81589277184452
+        anchor -0.04 0 -0.05
+        dampingConstant 5
       }
       device [
         RotationalMotor {
@@ -196,8 +203,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.0499999999999998 0 -0.07
-        rotation -0.6265782526958094 0.6260794902066961 0.464138088494351 2.271886781887589
+        translation -0.049999999999999996 0 -0.05
+        rotation -0.28362590582537883 0.2834001367978762 -0.9161008176001583 4.625665362477984
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -206,11 +213,12 @@ Robot {
             }
             geometry Cylinder {
               height 0.02
-              radius 0.04
+              radius 0.03
             }
           }
         ]
         name "solid(3)"
+        contactMaterial "RodaMaterial"
         boundingObject USE Roda
         physics DEF Physics_rpda Physics {
         }
