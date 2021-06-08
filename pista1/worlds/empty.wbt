@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.4420992196154644 -0.8563952543792374 -0.26671229497741383 1.3668906677771175
-  position 0.1609013640127869 0.1813838183948244 0.36251349064976873
+  orientation -0.35348055302400677 -0.8911033578536659 -0.2845809274279703 1.6031890904788628
+  position 0.14417694371993642 0.15336851426135265 0.3106619689994254
 }
 TexturedBackground {
 }
@@ -50,7 +50,7 @@ Solid {
   name "pista.obj"
 }
 Robot {
-  translation 0.538771 0.0291505 0.285825
+  translation 0.439051 0.0291205 0.293315
   rotation -0.006720822677686613 0.9999534801506637 0.006918675965192196 -1.4959063209395158
   children [
     DEF IR_R DistanceSensor {
@@ -68,6 +68,38 @@ Robot {
         }
       ]
       name "IR_R"
+    }
+    DEF IR_R_ext DistanceSensor {
+      translation -0.015 -1.59265e-05 0.13
+      rotation 0 0 -1 1.57
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "IR_R_ext"
+    }
+    DEF IR_L_ext DistanceSensor {
+      translation 0.015 -1.59265e-05 0.13
+      rotation 0 0 -1 1.57
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "IR_L_ext"
     }
     DEF IR_L DistanceSensor {
       translation 0.003 0 0.13
