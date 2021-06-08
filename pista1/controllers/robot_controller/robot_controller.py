@@ -24,12 +24,18 @@ for nome in motor_nomes:
 # obter e inicializar sensores IR de linha
     ir_l = robot.getDevice('IR_L')
     ir_l.enable(timestep)
-
+    
+    ir_l_ext = robot.getDevice('IR_L_ext')
+    ir_l_ext.enable(timestep)
+    
     ir_r = robot.getDevice('IR_R')
     ir_r.enable(timestep)
+    
+    ir_r_ext = robot.getDevice('IR_R_ext')
+    ir_r_ext.enable(timestep)
 
 # instanciar classes de controle
-seguelinha = linha.Linha(ir_l, ir_r, ir_thresh, mult_curva)
+seguelinha = linha.Linha(ir_l, ir_r, ir_l_ext, ir_r_ext, ir_thresh, mult_curva)
 
 
 def set_velocidade(velL, velR):
