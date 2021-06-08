@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.057948220265373225 -0.9305910714011704 -0.36144468677309094 2.806223780241379
-  position -0.6282359372628954 1.4068348648943918 -1.4083023670493708
+  orientation -0.2177480263224773 -0.915023938016462 -0.33958355362047693 1.7602568149630262
+  position -0.9675205656385498 0.5667417310091508 0.6319870671393699
 }
 TexturedBackground {
 }
@@ -24,7 +24,7 @@ Solid {
     }
     Solid {
       children [
-        Shape {
+        DEF Linha Shape {
           appearance PBRAppearance {
             baseColor 0.16862746 0.18039216 0.19215687
             roughness 1
@@ -44,27 +44,62 @@ Solid {
         }
       ]
       name "group_0_2829873"
+      boundingObject USE Linha
     }
   ]
   name "pista.obj"
 }
 Robot {
-  translation -1.1881758967834116e-06 0.03987003524429089 -3.63275092487802e-11
-  rotation 7.448622683459304e-07 1.5389989652052512e-05 -0.9999999998812966 -2.974445987641071e-05
+  translation -0.208406 0.0398711 0.80106
+  rotation -2.382089999982691e-06 -0.9999999999927336 2.9763699999783723e-06 1.83233
   children [
+    DEF IR_R DistanceSensor {
+      translation -0.006 0 0.13
+      rotation 0 0 -1 1.57
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "IR_R"
+    }
+    DEF IR_L DistanceSensor {
+      translation 0.006 0 0.13
+      rotation 0 0 -1 1.57
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "IR_L"
+    }
     DEF RodaFL HingeJoint {
       jointParameters HingeJointParameters {
-        position -1.55614658741659e-11
+        position 880.4620943593769
         anchor 0.04 0 0.07
       }
       device [
         RotationalMotor {
           name "MotorFL"
+          maxVelocity 100
+          maxTorque 100
         }
       ]
       endPoint Solid {
         translation 0.05 0 0.07
-        rotation -7.786931411537889e-12 7.78073293708295e-12 1 1.57
+        rotation 0.36911409039202986 -0.3688202719237103 0.8530688104087412 1.7282602859088692
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -80,23 +115,23 @@ Robot {
         boundingObject USE Roda
         physics DEF Physics_rpda Physics {
         }
-        linearVelocity -1.0645426842589661e-09 7.989819419232235e-06 4.224643696450707e-09
-        angularVelocity -1.0286915939062957e-09 1.104320874262701e-07 9.267278364594069e-08
       }
     }
     DEF RodaFR HingeJoint {
       jointParameters HingeJointParameters {
-        position 9.030936295437792e-08
+        position 3441.3198302733163
         anchor 0.04 0 0.07
       }
       device [
         RotationalMotor {
           name "MotorFR"
+          maxVelocity 100
+          maxTorque 100
         }
       ]
       endPoint Solid {
-        translation -0.049999999999999996 0 0.07
-        rotation 4.5190653684681496e-08 -4.51546814771889e-08 0.999999999999998 1.5700000000000018
+        translation -0.049999999999999746 0 0.07
+        rotation -0.6265778758205627 0.6260791136314477 0.4641391052331749 2.2718851079682287
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -113,23 +148,23 @@ Robot {
         boundingObject USE Roda
         physics DEF Physics_rpda Physics {
         }
-        linearVelocity -1.5544496284143063e-09 7.980714479358592e-06 3.2742667379633596e-08
-        angularVelocity 9.08105004383936e-07 1.1107943233923125e-07 9.260045860239897e-08
       }
     }
     DEF RodaBL HingeJoint {
       jointParameters HingeJointParameters {
-        position 1.1077100322465958e-08
+        position 880.462091699265
         anchor 0.04 0 -0.07
       }
       device [
         RotationalMotor {
           name "MotorBL"
+          maxVelocity 100
+          maxTorque 100
         }
       ]
       endPoint Solid {
-        translation 0.05 0 -0.07
-        rotation 5.542962414162029e-09 -5.53855016123298e-09 1 1.57
+        translation 0.05000000000000002 0 -0.07
+        rotation 0.36911310958040594 -0.3688192918928209 0.8530696585060105 1.7282593040368652
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -146,23 +181,23 @@ Robot {
         boundingObject USE Roda
         physics DEF Physics_rpda Physics {
         }
-        linearVelocity -5.873550280784887e-09 7.98963554000026e-06 7.297531902070959e-09
-        angularVelocity 1.104292435535726e-07 1.1040476140120733e-07 9.309846857670183e-08
       }
     }
     DEF RodaBR HingeJoint {
       jointParameters HingeJointParameters {
-        position 9.030739029491645e-08
+        position 3441.3198276017906
         anchor 0.04 0 -0.07
       }
       device [
         RotationalMotor {
           name "MotorBR"
+          maxVelocity 100
+          maxTorque 100
         }
       ]
       endPoint Solid {
-        translation -0.049999999999999996 0 -0.07
-        rotation 4.5189666569197064e-08 -4.515369514745816e-08 0.999999999999998 1.5700000000000018
+        translation -0.0499999999999998 0 -0.07
+        rotation -0.6265782526958094 0.6260794902066961 0.464138088494351 2.271886781887589
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -179,8 +214,6 @@ Robot {
         boundingObject USE Roda
         physics DEF Physics_rpda Physics {
         }
-        linearVelocity -6.363446646195307e-09 7.980488906489239e-06 3.274218068452319e-08
-        angularVelocity 9.081078536381862e-07 1.1107938897563856e-07 9.302578053347509e-08
       }
     }
     DEF Base Shape {
@@ -197,6 +230,4 @@ Robot {
   physics Physics {
   }
   controller "robot_controller"
-  linearVelocity -3.713881210116176e-09 7.98469537619185e-06 1.9220129989724982e-08
-  angularVelocity -1.370207532269104e-09 1.1036203403863145e-07 9.286801543587337e-08
 }

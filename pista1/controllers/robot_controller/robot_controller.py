@@ -1,8 +1,12 @@
 """robot_controller controller."""
 
+import linha
+
 from controller import Robot
 
-vel_mult = 3.0
+vel_mult = 1.5
+ir_thresh = 397.0
+mult_curva = 2.0
 
 # instanciar robô e obter timestep
 robot = Robot()
@@ -17,6 +21,16 @@ for nome in motor_nomes:
     device.setVelocity(0.0)
     motores.append(device)
 
+# obter e inicializar sensores IR de linha
+    ir_l = robot.getDevice('IR_L')
+    ir_l.enable(timestep)
+
+    ir_r = robot.getDevice('IR_R')
+    ir_r.enable(timestep)
+
+# instanciar classes de controle
+seguelinha = linha.Linha(ir_l, ir_r, ir_thresh, mult_curva, 1)
+
 
 def set_velocidade(velL, velR):
     motores[0].setVelocity(velL * vel_mult)
@@ -25,11 +39,8 @@ def set_velocidade(velL, velR):
     motores[3].setVelocity(velR * vel_mult)
 
 
-def teste():
-    set_velocidade(1.0, 1.0)
-    pass
-
-
 # loop principal
 while robot.step(timestep) != -1:
-    teste()
+    vel_l, vel_r = seguelinha.seguir_linha()
+    print(vel_l, vel_r)
+    set_velocidade(vel_l, vel_r)
