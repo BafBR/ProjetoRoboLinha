@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.35348055302400677 -0.8911033578536659 -0.2845809274279703 1.6031890904788628
-  position 0.14417694371993642 0.15336851426135265 0.3106619689994254
+  orientation 0.26175668363727794 0.9032190220383489 0.3401159167097337 4.2647532682611144
+  position -0.3857084139872791 0.695572588238751 0.1076047173091555
 }
 TexturedBackground {
 }
@@ -15,7 +15,7 @@ RectangleArena {
   floorAppearance NULL
 }
 Solid {
-  translation 0 0.09 0
+  translation 0 0.085 0
   rotation 0 0 1 1.5707996938995747
   scale 0.005 0.005 0.005
   children [
@@ -44,14 +44,13 @@ Solid {
         }
       ]
       name "group_0_2829873"
-      boundingObject USE Linha
     }
   ]
   name "pista.obj"
 }
 Robot {
-  translation 0.439051 0.0291205 0.293315
-  rotation -0.006720822677686613 0.9999534801506637 0.006918675965192196 -1.4959063209395158
+  translation 0.530073 0.0299119 0.291711
+  rotation -4.829629977138774e-05 0.9999999952664642 8.446619960017622e-05 -1.4583853071795865
   children [
     DEF IR_R DistanceSensor {
       translation -0.003 0 0.13
@@ -68,6 +67,7 @@ Robot {
         }
       ]
       name "IR_R"
+      type "infra-red"
     }
     DEF IR_R_ext DistanceSensor {
       translation -0.015 -1.59265e-05 0.13
@@ -84,6 +84,7 @@ Robot {
         }
       ]
       name "IR_R_ext"
+      type "infra-red"
     }
     DEF IR_L_ext DistanceSensor {
       translation 0.015 -1.59265e-05 0.13
@@ -100,6 +101,7 @@ Robot {
         }
       ]
       name "IR_L_ext"
+      type "infra-red"
     }
     DEF IR_L DistanceSensor {
       translation 0.003 0 0.13
@@ -116,10 +118,11 @@ Robot {
         }
       ]
       name "IR_L"
+      type "infra-red"
     }
     DEF RodaFL HingeJoint {
       jointParameters HingeJointParameters {
-        position 110.07018420881366
+        position 118.85374712609192
         anchor 0.04 0 0.04
         dampingConstant 5
       }
@@ -132,7 +135,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0.05 0 0.04
-        rotation -0.7076397461416143 0.7061564386452504 0.024270843423510192 3.0922912306710724
+        rotation 0.2718620304324817 -0.2717228324722955 -0.9231780644720505 4.634787070093894
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -153,7 +156,7 @@ Robot {
     }
     DEF RodaFR HingeJoint {
       jointParameters HingeJointParameters {
-        position 2313.572262696647
+        position 2337.2350237405176
         anchor -0.04 0 0.04
         dampingConstant 5
       }
@@ -166,7 +169,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.05 0 0.04
-        rotation -0.5435178424896522 0.5433937215905369 -0.6397746620735928 4.282347133380769
+        rotation 0.03212038198863668 -0.030851666327663386 -0.9990077355785142 4.713020444680641
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -188,7 +191,7 @@ Robot {
     }
     DEF RodaBL HingeJoint {
       jointParameters HingeJointParameters {
-        position 120.38387391346065
+        position 129.1674363356711
         anchor 0.04 0 -0.05
         dampingConstant 5
       }
@@ -201,7 +204,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0.05 0 -0.05
-        rotation -0.4336676949850482 0.4333224912087164 -0.7900404729752947 4.479644413268633
+        rotation 0.7015391281367772 -0.7009806960490796 -0.1283312723370206 3.397061127908215
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -223,7 +226,7 @@ Robot {
     }
     DEF RodaBR HingeJoint {
       jointParameters HingeJointParameters {
-        position -30.81589277184452
+        position -7.153131540479248
         anchor -0.04 0 -0.05
         dampingConstant 5
       }
@@ -236,7 +239,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.049999999999999996 0 -0.05
-        rotation -0.28362590582537883 0.2834001367978762 -0.9161008176001583 4.625665362477984
+        rotation 0.38858060350783674 -0.38827128950245315 -0.8356138583853117 4.534541666991517
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
