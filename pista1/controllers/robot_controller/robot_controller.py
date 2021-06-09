@@ -1,6 +1,7 @@
 """robot_controller controller."""
 
 import linha
+import camera
 
 from controller import Robot
 
@@ -24,24 +25,30 @@ for nome in motor_nomes:
     motores.append(device)
 
 # obter e inicializar sensores IR de linha
-    ir_l = robot.getDevice('IR_L')
-    ir_l.enable(timestep)
+ir_l = robot.getDevice('IR_L')
+ir_l.enable(timestep)
 
-    ir_l_ext = robot.getDevice('IR_L_ext')
-    ir_l_ext.enable(timestep)
+ir_l_ext = robot.getDevice('IR_L_ext')
+ir_l_ext.enable(timestep)
 
-    ir_r = robot.getDevice('IR_R')
-    ir_r.enable(timestep)
+ir_r = robot.getDevice('IR_R')
+ir_r.enable(timestep)
 
-    ir_r_ext = robot.getDevice('IR_R_ext')
-    ir_r_ext.enable(timestep)
+ir_r_ext = robot.getDevice('IR_R_ext')
+ir_r_ext.enable(timestep)
+
+# obter camera
+camera_device = robot.getDevice("camera")
+camera_device.enable(timestep)
+
+camera_obj = camera.Camera(camera_device)
 
 # instanciar classes de controle
 seguelinha = linha.Linha(ir_l, ir_r, ir_l_ext, ir_r_ext, ir_thresh, mult_curva)
 
 
 def set_velocidade(velL, velR):
-    print(velL, velR)
+    #print(velL, velR)
     motores[0].setVelocity(velL * vel_mult)
     motores[1].setVelocity(velR * vel_mult)
     motores[2].setVelocity(velL * vel_mult)

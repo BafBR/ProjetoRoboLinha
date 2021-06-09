@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.5336358244005638 0.7918310613273944 0.2970460860429952 1.1069679383666993
-  position 0.006427777033792242 0.3744779940728121 -0.6176905781082009
+  orientation 0.26175668363727794 0.9032190220383489 0.3401159167097337 4.2647532682611144
+  position -0.3857084139872791 0.695572588238751 0.1076047173091555
 }
 TexturedBackground {
 }
@@ -49,8 +49,8 @@ Solid {
   name "pista.obj"
 }
 Robot {
-  translation -0.3659321874172404 0.02990471319401146 -0.7883607720838597
-  rotation -6.136288608415341e-05 0.9999999963669585 -5.916653650113454e-05 -1.5978486762994502
+  translation 0.530073 0.0299119 0.291711
+  rotation -4.829629977138774e-05 0.9999999952664642 8.446619960017622e-05 -1.4583853071795865
   children [
     DEF IR_R DistanceSensor {
       translation -0.003 0 0.13
@@ -120,72 +120,9 @@ Robot {
       name "IR_L"
       type "infra-red"
     }
-    DEF OBJ_F DistanceSensor {
-      translation -1.59265e-05 0.01 0.11
-      rotation 0 1 0 -1.57
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 1 0 1
-            metalness 0
-          }
-          geometry Box {
-            size 0.01 0.01 0.01
-          }
-        }
-      ]
-      name "OBJ_F"
-    }
-    DEF OBJ_B DistanceSensor {
-      translation 0 0.01 -0.11
-      rotation 0 1 0 1.57
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 1 0 1
-            metalness 0
-          }
-          geometry Box {
-            size 0.01 0.01 0.01
-          }
-        }
-      ]
-      name "OBJ_B"
-    }
-    DEF OBJ_L DistanceSensor {
-      translation 0.04 0.01 -0.005
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 1 0 1
-            metalness 0
-          }
-          geometry Box {
-            size 0.01 0.01 0.01
-          }
-        }
-      ]
-      name "OBJ_L"
-    }
-    DEF OBJ_R DistanceSensor {
-      translation -0.04 0.01 -0.005
-      rotation 0 1 0 3.14
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 1 0 1
-            metalness 0
-          }
-          geometry Box {
-            size 0.01 0.01 0.01
-          }
-        }
-      ]
-      name "OBJ_R"
-    }
     DEF RodaFL HingeJoint {
       jointParameters HingeJointParameters {
-        position 352.7907314233317
+        position 118.85374712609192
         anchor 0.04 0 0.04
         dampingConstant 5
       }
@@ -198,7 +135,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0.05 0 0.04
-        rotation 0.39523656487060776 -0.3940106645687292 0.8297853059649768 1.754452633947248
+        rotation 0.2718620304324817 -0.2717228324722955 -0.9231780644720505 4.634787070093894
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -219,7 +156,7 @@ Robot {
     }
     DEF RodaFR HingeJoint {
       jointParameters HingeJointParameters {
-        position 2572.995801930068
+        position 2337.2350237405176
         anchor -0.04 0 0.04
         dampingConstant 5
       }
@@ -232,7 +169,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.05 0 0.04
-        rotation 0.7074313796528624 -0.7062225445259871 -0.028116911026781103 3.196185215398964
+        rotation 0.03212038198863668 -0.030851666327663386 -0.9990077355785142 4.713020444680641
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -254,7 +191,7 @@ Robot {
     }
     DEF RodaBL HingeJoint {
       jointParameters HingeJointParameters {
-        position 363.1044437622021
+        position 129.1674363356711
         anchor 0.04 0 -0.05
         dampingConstant 5
       }
@@ -267,7 +204,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0.05 0 -0.05
-        rotation -0.5230713929766765 0.5226550229720961 0.6732221363053037 1.9558001611467395
+        rotation 0.7015391281367772 -0.7009806960490796 -0.1283312723370206 3.397061127908215
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -289,7 +226,7 @@ Robot {
     }
     DEF RodaBR HingeJoint {
       jointParameters HingeJointParameters {
-        position 228.60767029524754
+        position -7.153131540479248
         anchor -0.04 0 -0.05
         dampingConstant 5
       }
@@ -302,7 +239,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.049999999999999996 0 -0.05
-        rotation 0.6830149646637564 -0.6824712779934781 0.260237416140178 2.6320234819018893
+        rotation 0.38858060350783674 -0.38827128950245315 -0.8356138583853117 4.534541666991517
         children [
           DEF Roda Shape {
             appearance PBRAppearance {
@@ -322,13 +259,6 @@ Robot {
         }
       }
     }
-    Camera {
-      translation 0.000201986 0.10781 -0.0995012
-      rotation -0.00010359597428302096 0.9914447538807455 0.13052696759758944 3.14001
-      fieldOfView 1
-      width 1280
-      height 720
-    }
     DEF Base Shape {
       appearance PBRAppearance {
         baseColor 0.7 0.7 1
@@ -343,6 +273,4 @@ Robot {
   physics Physics {
   }
   controller "robot_controller"
-  linearVelocity -0.08996235169193341 3.724656389181398e-07 -0.00242583245053021
-  angularVelocity 9.683047693677022e-05 1.542714006532819e-05 1.2085620962467317e-05
 }
