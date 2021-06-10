@@ -28,7 +28,6 @@ class Camera:
         imagem.save('foto.jpg')
 
     def servidor(self, https, hport):
-        print(f"Server em {https}:{hport}")
         sockHttp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
             sockHttp.bind((https, hport))
@@ -40,9 +39,7 @@ class Camera:
         while True:
             client, addr = sockHttp.accept()
             msg = client.recv(2048).decode("utf-8")
-            # print(msg)
             rota = msg.split("/")[1].split(" ")[0]
-            print(rota)
             if(rota == "foto"):
                 self.tirar_foto()
 
