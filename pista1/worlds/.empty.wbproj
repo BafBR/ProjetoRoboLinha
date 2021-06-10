@@ -8,4 +8,4 @@ orthographicViewHeight: 1
 textFiles: -1
 globalOptionalRendering: DistanceSensorRays
 consoles: Console:All:All
-renderingDevicePerspectives: robot:camera;1;0.158333;0;0
+renderingDevicePerspectives: robot:camera;1;0.178125;0;0
